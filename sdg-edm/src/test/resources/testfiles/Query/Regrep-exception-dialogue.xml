@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<query:QueryResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0"
+  xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+  xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+  xmlns:sdg="http://data.europa.eu/p4s"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  requestId="c4369c4d-740e-4b64-80f0-7b209a66d629"
+  status="urn:oasis:nammes:tc:ebxml-regrep:ResponseStatusType:Failure">
+
+  <!-- Additional elements describing the response -->
+
+  <rs:Exception xsi:type="rs:ObjectNotFoundExceptionType" severity="FAILURE"
+    message="More information is required."
+    code="DIALOG">
+
+    <rim:Slot name="UserRequestedInformationConcepts">
+      <rim:SlotValue xsi:type="rim:CollectionValueType"
+        collectionType="urn:oasis:names:tc:ebxml-regrep:CollectionType:Set">
+
+        <!-- Expecting an cccev InformationConcept -->
+        <rim:Element xsi:type="rim:AnyValueType">
+          <sdg:InformationConcept>
+            <sdg:Identifier>ZipOfBirth</sdg:Identifier>
+            <sdg:Type>String</sdg:Type>
+            <sdg:ValueExpression>^\d{5}$</sdg:ValueExpression>
+            <sdg:Description lang="en">Postalcode of Birthplace</sdg:Description>
+            <sdg:Description lang="de">Postleitzahl des Geburtsortes</sdg:Description>
+            <sdg:SupportedValue>
+              <sdg:StringValue>12345</sdg:StringValue>
+            </sdg:SupportedValue>
+          </sdg:InformationConcept>
+        </rim:Element>
+
+        <!-- Expecting an cccev InformationConcept -->
+        <rim:Element xsi:type="rim:AnyValueType">
+          <sdg:InformationConcept>
+            <sdg:Identifier>LocationOfBirth</sdg:Identifier>
+            <sdg:Type>String</sdg:Type>
+            <sdg:Description lang="en">Location Of Birth of the Evidence Subject</sdg:Description>
+            <sdg:Description lang="de">Location Of Birth of the Evidence Subject</sdg:Description>
+            <sdg:SupportedValue>
+              <sdg:StringValue>
+
+              </sdg:StringValue>
+            </sdg:SupportedValue>
+          </sdg:InformationConcept>
+        </rim:Element>
+      </rim:SlotValue>
+
+    </rim:Slot>
+
+    <rim:Slot name="Reauthentication">
+      <rim:SlotValue xsi:type="rim:VocabularyTermValueType">
+        <rim:Value term="iso3166-1-alpha2">AT</rim:Value>
+      </rim:SlotValue>
+    </rim:Slot>
+  </rs:Exception>
+
+</query:QueryResponse>
